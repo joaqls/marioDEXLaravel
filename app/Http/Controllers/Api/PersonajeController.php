@@ -17,7 +17,8 @@ class PersonajeController extends Controller
 
     public function store(Request $request)
     {
-        return Personaje::create($request->all());
+        $personaje = Personaje::create($request->all());
+        return response()->json($personaje, 201);
     }
 
     public function show(Personaje $personaje)
